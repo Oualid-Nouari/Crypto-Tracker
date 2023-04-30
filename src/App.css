@@ -1,38 +1,238 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'popins', sans-serif;
+    color: #eee;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #13a526d8;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
 .App {
-  text-align: center;
+    background-color: #111111;
+    padding-top: 20px;
+    min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    width: 90%;
+    margin-inline: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container table {
+    border: 1px solid #ffffff18;
+    width: 100%;
+    padding: 0 0;
+    border-radius: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container table .coin, th {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 12px 18px;
 }
 
-.App-link {
-  color: #61dafb;
+.container table caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container table caption input {
+    padding: 10px 13px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #3d3d3d36;
+}
+
+.container table caption .search {
+    position: relative;
+}
+
+.container table caption i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    background-color: #0e0c0c7e;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+th {
+    background-color: #24242436;
+    backdrop-filter: blur(12px);
+    border-radius: 15px 15px 0 0;
+}
+
+table .img-cnt {
+    width: 100%;
+}
+
+td {
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    backdrop-filter: blur(12px);
+    background-color: #24242436;
+}
+
+tr button {
+    width: 90%;
+    padding: 12px;
+    background-color: green;
+    border: none;
+    outline: none;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+tr button:hover {
+    border: 1px solid green;
+    background-color: transparent;
+}
+
+section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc42;
+    width: 80%;
+    height: 80vh;
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+}
+
+section small {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: 63px;
+    height: 83px;
+    background-color: #cccccc65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0 18px 0 43px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+section .modal-header {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+
+section .modal-header .p-infos {
+    margin: 0 0 8px 15px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000b9;
+}
+
+ul {
+    padding: 40px;
+}
+
+ul span {
+    font-weight: 700;
+}
+
+ul li {
+    padding: 10px;
+    list-style: none;
+}
+
+ul li:not(:first-child) {
+    border-top: 1px solid #fff;
+    margin: 10px 0;
+}
+
+/* media queries */
+
+@media (max-width: 767px) {
+    td {
+        font-size: 12px;
+    }
+    tr button  {
+        font-size: 12px;
+    }
+    .container {
+        width: 100%;
+    }
+    th td:nth-child(5), tr td:nth-child(5) {
+        display: none;
+    }
+    caption h1 {
+        font-size: 22px;
+    }
+    .App {
+        padding-top: 0;
+    }
+    section {
+        width: 100%;
+        height: 100vh;
+        padding: 5px;
+    }
+    section img {
+        width: 80px;
+        margin-top: 20px;
+    }
+    section .modal-header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    section .modal-header .p-infos {
+        margin: 10px 0;
+        text-align: center;
+    }
+    section ul {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        overflow-x: scroll;
+    }
+    caption h1 {
+        font-size: 16px;
+    }
 }
